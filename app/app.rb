@@ -6,7 +6,11 @@ require "sinatra/reloader"
 set :server, :puma
 
 get '/' do
-  erb :index
+  erb :index, :locals => {:name => "pecos"}
+end
+
+get '/:name' do
+	erb :index, :locals => {:name => params[:name]}
 end
 
 get '/photos.json' do

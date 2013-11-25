@@ -12,7 +12,8 @@ class @FeelingCagey
   @preloadCage = (callback) ->
 
     image = new Image()
-    image.src = '/img/cage.png'
+    image.src = '/img/' + window.facePicture
+    console.log(image.src)
 
     $(image).on('load', callback)
 
@@ -51,7 +52,7 @@ class @FeelingCagey
       
       $(photo.faces).each(->
 
-        $('<div class="face"><img src="/img/cage.png"></div>')
+        $('<div class="face"><img src="/img/' + window.facePicture + '"></div>')
           .css('top', "#{@top}%")
           .css('left', "#{@left}%")
           .css('width', "#{@width}%")
